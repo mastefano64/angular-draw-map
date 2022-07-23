@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Carica features</h2>
+
+<mat-dialog-content>
+  <ng-container *ngFor="let f of files">
+    <div class="fileRow">
+      <div>
+        <button mat-icon-button type="button" (click)="onOpenFile(f)">
+          <mat-icon>folder_open</mat-icon>
+        </button>
+      </div>
+      <div>
+        {{ f.name }}
+      </div>
+    </div>
+  </ng-container>
+</mat-dialog-content>

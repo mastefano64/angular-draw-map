@@ -1,0 +1,23 @@
+<div class="mapSurface">
+  <app-panel-left class="mapSurfaceSx" [hidden]="hidepanel">
+  </app-panel-left>
+
+  <div id="map" class="map mapSurfaceDx">
+    <app-surfacemap-menubar
+      [manustatus]="menustatus"
+      [datasummarycreated]="mapservice.datasummarycreated"
+      [ismodified]="mapservice.ismodified"
+      (geometrychange)="onChangeGeometry($event)"
+      (modifymodechange)="onChangeModifymode($event)"
+      (menutoggle)="onMenuToggle()"
+      (loadfestures)="onLoadFeatures()"
+      (menuchanged)="onChangeMenu()"
+      (savefestures)="onSaveFeatures()">
+    </app-surfacemap-menubar>
+  </div>
+</div>
+
+<div id="popupContainerLayerSelected">
+  <div id="popupLayerSelected">
+  </div>
+</div>

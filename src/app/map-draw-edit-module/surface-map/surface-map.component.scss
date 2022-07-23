@@ -1,0 +1,43 @@
+.mapSurface {
+  display: flex;
+}
+
+.mapSurfaceSx {
+  flex: 0 400px;
+}
+
+.mapSurfaceDx {
+  flex: 0 1 100%;
+}
+
+.map {
+  width: 100%;
+  height: calc(100vh - 64px);
+}
+
+#popupLayerSelected {
+  width: 300px;
+  height: 200px;
+  padding: 5px;
+  border: solid 1px #000000;
+  background: #ffffff;
+  color: #000000;
+}
+
+#mapTemplPupupRow {
+  position: relative;
+}
+
+#mapTemplPupupClose {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+.mapTemplLabel1 {
+  font-size: 15px;
+}
+
+.mapTemplLabel2 {
+  font-size: 16px;
+}

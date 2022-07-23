@@ -1,0 +1,13 @@
+<h2 mat-dialog-title>Salva features</h2>
+
+<form class="form-container-with-row" (ngSubmit)="onSearch(f)" #f="ngForm">
+  <mat-dialog-content>
+    <pre class="displaybox">
+      {{ json }}
+    </pre>
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button color="primary" [disabled]="f.invalid">Salva</button>
+  </mat-dialog-actions>
+</form>

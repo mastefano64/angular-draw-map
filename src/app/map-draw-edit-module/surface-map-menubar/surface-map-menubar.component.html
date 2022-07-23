@@ -1,0 +1,43 @@
+<div class="menubarOuter">
+  <div class="menubarInner">
+    <div class="menubarPanel">
+      <button mat-icon-button class="menuicon1" color="primary" color="primary" (click)="onTogglePanel()"
+             matTooltip="Show/Hide pannello di sinistra">
+        <mat-icon class="menuicon2">menu</mat-icon>
+      </button>
+
+      <button mat-fab color="primary" (click)="onLoadFeatures()" matTooltip="Carica feature">
+        <mat-icon [ngClass]="{ buttonDisabled: manustatus.createenabled || manustatus.editenabled }">folder_open</mat-icon>
+      </button>
+
+      <button mat-fab color="primary" (click)="onSelectCreate()" matTooltip="Nuovo disegno mappa">
+        <mat-icon [ngClass]="{ buttonDisabled: manustatus.createenabled || manustatus.editenabled }">add</mat-icon>
+      </button>
+      <button mat-fab color="primary" (click)="onSelectEdit()" matTooltip="Modifica disegno mappa">
+        <mat-icon [ngClass]="{ buttonDisabled: manustatus.createenabled || manustatus.editenabled }">edit</mat-icon>
+      </button>
+      <button mat-fab color="primary" (click)="onUnselect()" matTooltip="Esci da modalità disegnomappa">
+        <mat-icon [ngClass]="{ buttonDisabled: manustatus.unselectenabled }">close</mat-icon>
+      </button>
+
+      <button mat-fab color="primary" (click)="onSaveFeatures()" matTooltip="Salva feature">
+        <mat-icon [ngClass]="{ buttonDisabled: !ismodified || (manustatus.createenabled || manustatus.editenabled)}">save</mat-icon>
+      </button>
+
+      <mat-slide-toggle color="primary" [(ngModel)]="modifymode" (change)="onModeChange($event)"
+                [disabled]="!manustatus.createenabled && !manustatus.editenabled">
+        {{ (modifymode) ? 'Modifica/on' : 'Modifica/off' }}
+      </mat-slide-toggle>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Geometria</mat-label>
+        <mat-select (selectionChange)="onGeometryChange($event)" [(ngModel)]="geometry"
+               [disabled]="!manustatus.createenabled && !manustatus.editenabled">
+          <mat-option *ngFor="let geom of geometries" [value]="geom.value">
+            {{ geom.text }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+</div>

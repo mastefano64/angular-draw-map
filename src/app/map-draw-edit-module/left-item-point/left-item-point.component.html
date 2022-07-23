@@ -1,0 +1,25 @@
+<div *ngIf="listPoint">
+  <ng-container *ngFor="let item of listPoint">
+    <mat-card>
+      <div (click)="onCenterItem(item)">
+        <div class="formatCoord">
+          {{ getFeaturePointLonLat(item).lat }}
+          <span> - </span>
+          {{ getFeaturePointLonLat(item).lon }}
+        </div>
+        <div class="cardContent">
+          <div>{{ item.name }}</div>
+          <div>{{ item.description }}</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button mat-mini-fab color="primary" (click)="onModifyItem(item)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-mini-fab color="primary" (click)="onDeleteItem(item)">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </div>
+    </mat-card>
+  </ng-container>
+</div>

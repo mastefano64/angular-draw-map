@@ -1,0 +1,51 @@
+<div class="panelcontainer">
+  <div *ngIf="datasummarycreated; else notfound">
+    <button mat-stroked-button class="btnsummary" (click)="onOpenDialogSummary()">
+      Definizione generale
+    </button>
+
+    <mat-tab-group [(selectedIndex)]="tabindex">
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <span>Punti</span>
+        </ng-template>
+        <app-left-item-point
+          [listPoint]="listPoint"
+          (centerpoint)="onCenterPointItem($event)"
+          (modifypoint)="onModifyPointItem($event)"
+          (deletepoint)="onDeletePointItem($event)">
+        </app-left-item-point>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <span>Linee</span>
+        </ng-template>
+        <app-left-item-linestring
+          [listLineString]="listLineString"
+          (centerlinestring)="onCenterLineStringItem($event)"
+          (modifylinestring)="onModifyLineStringItem($event)"
+          (deletelinestring)="onDeleteLineStringItem($event)">
+        </app-left-item-linestring>
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <span>Poligoni</span>
+        </ng-template>
+        <app-left-item-polygon
+          [listPolygon]="listPolygon"
+          (centerpolygon)="onCenterPolygonItem($event)"
+          (modifypolygon)="onModifyPolygonItem($event)"
+          (deletepolygon)="onDeletePolygonItem($event)">
+        </app-left-item-polygon>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
+<ng-template #notfound>
+  <div class="notfound">
+    non esistono dati ...
+  </div>
+</ng-template>
