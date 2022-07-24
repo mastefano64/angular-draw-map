@@ -11,6 +11,7 @@ import { MapDrawEditModule } from './map-draw-edit-module/map-draw-edit.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
+import { HelpComponent } from './help/help.component';
 import { Page1Component } from './page1/page1.component';
 import { Page2Component } from './page2/page2.component';
 
@@ -19,6 +20,7 @@ import { Page2Component } from './page2/page2.component';
     AppComponent,
     NavComponent,
     HomeComponent,
+    HelpComponent,
     Page1Component,
     Page2Component
   ],
